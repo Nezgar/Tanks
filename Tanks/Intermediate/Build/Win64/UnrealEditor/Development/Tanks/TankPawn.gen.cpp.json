@@ -1,0 +1,15 @@
+{
+    "Version": "1.2",
+    "Data": {
+        "Source": "d:\\c++\\4.2\\tanks\\tanks\\intermediate\\build\\win64\\unrealeditor\\inc\\tanks\\tankpawn.gen.cpp",
+        "ProvidedModule": "",
+        "PCH": "d:\\c++\\4.2\\tanks\\tanks\\intermediate\\build\\win64\\tankseditor\\development\\engine\\sharedpch.engine.shadowerrors.h.pch",
+        "Includes": [
+            "d:\\c++\\4.2\\tanks\\tanks\\intermediate\\build\\win64\\unrealeditor\\development\\tanks\\definitions.tanks.h",
+            "d:\\c++\\4.2\\tanks\\tanks\\source\\tanks\\tankpawn.h",
+            "d:\\c++\\4.2\\tanks\\tanks\\intermediate\\build\\win64\\unrealeditor\\inc\\tanks\\tankpawn.generated.h"
+        ],
+        "ImportedModules": [],
+        "ImportedHeaderUnits": []
+    }
+}
