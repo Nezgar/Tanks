@@ -7,10 +7,14 @@
 /IGNORE:4221
 /NODEFAULTLIB
 "D:\C++\4.2\Tanks\Tanks\Intermediate\Build\Win64\TanksEditor\Development\Engine\SharedPCH.Engine.ShadowErrors.h.obj"
-"D:\C++\4.2\Tanks\Tanks\Intermediate\Build\Win64\UnrealEditor\Development\Tanks\TankPawn.cpp.obj"
-"D:\C++\4.2\Tanks\Tanks\Intermediate\Build\Win64\UnrealEditor\Development\Tanks\TankPlayerController.cpp.obj"
 "D:\C++\4.2\Tanks\Tanks\Intermediate\Build\Win64\UnrealEditor\Development\Tanks\Tanks.cpp.obj"
 "D:\C++\4.2\Tanks\Tanks\Intermediate\Build\Win64\UnrealEditor\Development\Tanks\TanksGameModeBase.cpp.obj"
+"D:\C++\4.2\Tanks\Tanks\Intermediate\Build\Win64\UnrealEditor\Development\Tanks\Cannon.cpp.obj"
+"D:\C++\4.2\Tanks\Tanks\Intermediate\Build\Win64\UnrealEditor\Development\Tanks\GameStruct.cpp.obj"
+"D:\C++\4.2\Tanks\Tanks\Intermediate\Build\Win64\UnrealEditor\Development\Tanks\TankPawn.cpp.obj"
+"D:\C++\4.2\Tanks\Tanks\Intermediate\Build\Win64\UnrealEditor\Development\Tanks\TankPlayerController.cpp.obj"
+"D:\C++\4.2\Tanks\Tanks\Intermediate\Build\Win64\UnrealEditor\Development\Tanks\Cannon.gen.cpp.obj"
+"D:\C++\4.2\Tanks\Tanks\Intermediate\Build\Win64\UnrealEditor\Development\Tanks\GameStruct.gen.cpp.obj"
 "D:\C++\4.2\Tanks\Tanks\Intermediate\Build\Win64\UnrealEditor\Development\Tanks\TankPawn.gen.cpp.obj"
 "D:\C++\4.2\Tanks\Tanks\Intermediate\Build\Win64\UnrealEditor\Development\Tanks\TankPlayerController.gen.cpp.obj"
 "D:\C++\4.2\Tanks\Tanks\Intermediate\Build\Win64\UnrealEditor\Development\Tanks\Tanks.init.gen.cpp.obj"

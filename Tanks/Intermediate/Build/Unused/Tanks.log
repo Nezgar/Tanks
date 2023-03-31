@@ -1,18 +1,24 @@
 ﻿  Using bundled DotNet SDK
   Log file: C:\Users\Ту\AppData\Local\UnrealBuildTool\Log.txt
   Using 'git status' to determine working set for adaptive non-unity build (D:\C++\4.2\Tanks).
+  Invalidating makefile for TanksEditor (working set of source files changed)
+  Parsing headers for TanksEditor
+    Running UnrealHeaderTool "D:\C++\4.2\Tanks\Tanks\Tanks.uproject" "D:\C++\4.2\Tanks\Tanks\Intermediate\Build\Win64\TanksEditor\Development\TanksEditor.uhtmanifest" -LogCmds="loginit warning, logexit warning, logdatabase error" -Unattended -WarningsAsErrors -abslog="C:\Users\Ту\AppData\Local\UnrealBuildTool\Log_UHT.txt" -installed
+  Reflection code generated for TanksEditor in 2,1475125 seconds
   Building TanksEditor...
   Using Visual Studio 2022 14.35.32216 toolchain (C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.35.32215) and Windows 10.0.20348.0 SDK (C:\Program Files (x86)\Windows Kits\10).
-  [Adaptive Build] Excluded from Tanks unity file: TankPawn.cpp, TankPlayerController.cpp, Tanks.cpp, TanksGameModeBase.cpp
+  [Adaptive Build] Excluded from Tanks unity file: Cannon.cpp, GameStruct.cpp, TankPawn.cpp, TankPlayerController.cpp
   Determining max actions to execute in parallel (6 physical cores, 12 logical cores)
     Executing up to 6 processes, one per physical core
-    Requested 1,5 GB free memory per action, 6,02 GB available: limiting max parallel actions to 4
-  Building 4 actions with 4 processes...
-  [1/4] Compile TankPawn.cpp
-  [2/4] Link UnrealEditor-Tanks.lib
+    Requested 1,5 GB free memory per action, 7,13 GB available: limiting max parallel actions to 4
+  Building 6 actions with 4 processes...
+  [1/6] Compile Cannon.gen.cpp
+  [2/6] Compile TankPawn.cpp
+  [3/6] Compile Cannon.cpp
+  [4/6] Link UnrealEditor-Tanks.lib
      Создается библиотека D:\C++\4.2\Tanks\Tanks\Intermediate\Build\Win64\UnrealEditor\Development\Tanks\UnrealEditor-Tanks.lib и объект D:\C++\4.2\Tanks\Tanks\Intermediate\Build\Win64\UnrealEditor\Development\Tanks\UnrealEditor-Tanks.exp
-  [3/4] Link UnrealEditor-Tanks.dll
+  [5/6] Link UnrealEditor-Tanks.dll
      Создается библиотека D:\C++\4.2\Tanks\Tanks\Intermediate\Build\Win64\UnrealEditor\Development\Tanks\UnrealEditor-Tanks.suppressed.lib и объект D:\C++\4.2\Tanks\Tanks\Intermediate\Build\Win64\UnrealEditor\Development\Tanks\UnrealEditor-Tanks.suppressed.exp
-  [4/4] WriteMetadata TanksEditor.target
-  Total time in Parallel executor: 12,09 seconds
-  Total execution time: 12,51 seconds
+  [6/6] WriteMetadata TanksEditor.target
+  Total time in Parallel executor: 11,66 seconds
+  Total execution time: 15,18 seconds
