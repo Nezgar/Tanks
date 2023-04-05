@@ -44,11 +44,11 @@ void EmptyLinkFunctionForGeneratedCodeGameStruct() {}
 #if WITH_METADATA
 	const UECodeGen_Private::FMetaDataPairParam Z_Construct_UEnum_Tanks_ECannonType_Statics::Enum_MetaDataParams[] = {
 		{ "BlueprintType", "true" },
-		{ "FireProjectile.DisplayName", "Use projectiles" },
+		{ "FireProjectile.DisplayName", "Use projectile" },
 		{ "FireProjectile.Name", "ECannonType::FireProjectile" },
 		{ "FireSpecial.DisplayName", "Use special" },
 		{ "FireSpecial.Name", "ECannonType::FireSpecial" },
-		{ "FireTrace.DisplayName", "Use projectile" },
+		{ "FireTrace.DisplayName", "Use Trace" },
 		{ "FireTrace.Name", "ECannonType::FireTrace" },
 		{ "ModuleRelativePath", "GameStruct.h" },
 	};
@@ -137,12 +137,12 @@ void EmptyLinkFunctionForGeneratedCodeGameStruct() {}
 		static const FClassRegisterCompiledInInfo ClassInfo[];
 	};
 	const FEnumRegisterCompiledInInfo Z_CompiledInDeferFile_FID_Tanks_Source_Tanks_GameStruct_h_Statics::EnumInfo[] = {
-		{ ECannonType_StaticEnum, TEXT("ECannonType"), &Z_Registration_Info_UEnum_ECannonType, CONSTRUCT_RELOAD_VERSION_INFO(FEnumReloadVersionInfo, 2917274926U) },
+		{ ECannonType_StaticEnum, TEXT("ECannonType"), &Z_Registration_Info_UEnum_ECannonType, CONSTRUCT_RELOAD_VERSION_INFO(FEnumReloadVersionInfo, 3543087063U) },
 	};
 	const FClassRegisterCompiledInInfo Z_CompiledInDeferFile_FID_Tanks_Source_Tanks_GameStruct_h_Statics::ClassInfo[] = {
 		{ Z_Construct_UClass_UGameStruct, UGameStruct::StaticClass, TEXT("UGameStruct"), &Z_Registration_Info_UClass_UGameStruct, CONSTRUCT_RELOAD_VERSION_INFO(FClassReloadVersionInfo, sizeof(UGameStruct), 463046260U) },
 	};
-	static FRegisterCompiledInInfo Z_CompiledInDeferFile_FID_Tanks_Source_Tanks_GameStruct_h_729656274(TEXT("/Script/Tanks"),
+	static FRegisterCompiledInInfo Z_CompiledInDeferFile_FID_Tanks_Source_Tanks_GameStruct_h_2317139999(TEXT("/Script/Tanks"),
 		Z_CompiledInDeferFile_FID_Tanks_Source_Tanks_GameStruct_h_Statics::ClassInfo, UE_ARRAY_COUNT(Z_CompiledInDeferFile_FID_Tanks_Source_Tanks_GameStruct_h_Statics::ClassInfo),
 		nullptr, 0,
 		Z_CompiledInDeferFile_FID_Tanks_Source_Tanks_GameStruct_h_Statics::EnumInfo, UE_ARRAY_COUNT(Z_CompiledInDeferFile_FID_Tanks_Source_Tanks_GameStruct_h_Statics::EnumInfo));

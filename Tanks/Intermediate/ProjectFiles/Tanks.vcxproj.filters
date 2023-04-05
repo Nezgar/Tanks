@@ -35,16 +35,40 @@
     <Filter Include="Source\Tanks">
       <UniqueIdentifier>{22353D44-07F5-39C4-B6FF-4B33A150952A}</UniqueIdentifier>
     </Filter>
+    <ClCompile Include="..\..\Source\Tanks\AmmoBox.cpp">
+      <Filter>Source\Tanks</Filter>
+    </ClCompile>
+    <ClInclude Include="..\..\Source\Tanks\AmmoBox.h">
+      <Filter>Source\Tanks</Filter>
+    </ClInclude>
     <ClCompile Include="..\..\Source\Tanks\Cannon.cpp">
       <Filter>Source\Tanks</Filter>
     </ClCompile>
     <ClInclude Include="..\..\Source\Tanks\Cannon.h">
       <Filter>Source\Tanks</Filter>
     </ClInclude>
+    <ClCompile Include="..\..\Source\Tanks\CannonChange.cpp">
+      <Filter>Source\Tanks</Filter>
+    </ClCompile>
+    <ClInclude Include="..\..\Source\Tanks\CannonChange.h">
+      <Filter>Source\Tanks</Filter>
+    </ClInclude>
+    <ClCompile Include="..\..\Source\Tanks\GamePool.cpp">
+      <Filter>Source\Tanks</Filter>
+    </ClCompile>
+    <ClInclude Include="..\..\Source\Tanks\GamePool.h">
+      <Filter>Source\Tanks</Filter>
+    </ClInclude>
     <ClCompile Include="..\..\Source\Tanks\GameStruct.cpp">
       <Filter>Source\Tanks</Filter>
     </ClCompile>
     <ClInclude Include="..\..\Source\Tanks\GameStruct.h">
+      <Filter>Source\Tanks</Filter>
+    </ClInclude>
+    <ClCompile Include="..\..\Source\Tanks\Projectile.cpp">
+      <Filter>Source\Tanks</Filter>
+    </ClCompile>
+    <ClInclude Include="..\..\Source\Tanks\Projectile.h">
       <Filter>Source\Tanks</Filter>
     </ClInclude>
     <ClCompile Include="..\..\Source\Tanks\TankPawn.cpp">

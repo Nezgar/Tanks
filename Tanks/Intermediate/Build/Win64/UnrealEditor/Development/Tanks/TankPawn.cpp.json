@@ -7,6 +7,8 @@
         "Includes": [
             "d:\\c++\\4.2\\tanks\\tanks\\intermediate\\build\\win64\\unrealeditor\\development\\tanks\\definitions.tanks.h",
             "d:\\c++\\4.2\\tanks\\tanks\\source\\tanks\\tankpawn.h",
+            "d:\\c++\\4.2\\tanks\\tanks\\source\\tanks\\ammobox.h",
+            "d:\\c++\\4.2\\tanks\\tanks\\intermediate\\build\\win64\\unrealeditor\\inc\\tanks\\ammobox.generated.h",
             "d:\\c++\\4.2\\tanks\\tanks\\intermediate\\build\\win64\\unrealeditor\\inc\\tanks\\tankpawn.generated.h",
             "d:\\programms\\ue_5.0\\engine\\source\\runtime\\engine\\classes\\components\\boxcomponent.h",
             "d:\\programms\\ue_5.0\\engine\\source\\runtime\\engine\\classes\\components\\shapecomponent.h",
@@ -32,7 +34,11 @@
             "d:\\programms\\ue_5.0\\engine\\source\\runtime\\core\\public\\internationalization\\polyglottextdata.h",
             "d:\\programms\\ue_5.0\\engine\\source\\runtime\\coreuobject\\public\\assetregistry\\arfilter.h",
             "d:\\c++\\4.2\\tanks\\tanks\\intermediate\\build\\win64\\unrealeditor\\inc\\tanks\\gamestruct.generated.h",
-            "d:\\c++\\4.2\\tanks\\tanks\\intermediate\\build\\win64\\unrealeditor\\inc\\tanks\\cannon.generated.h"
+            "d:\\c++\\4.2\\tanks\\tanks\\intermediate\\build\\win64\\unrealeditor\\inc\\tanks\\cannon.generated.h",
+            "d:\\c++\\4.2\\tanks\\tanks\\source\\tanks\\gamepool.h",
+            "d:\\c++\\4.2\\tanks\\tanks\\source\\tanks\\projectile.h",
+            "d:\\c++\\4.2\\tanks\\tanks\\intermediate\\build\\win64\\unrealeditor\\inc\\tanks\\projectile.generated.h",
+            "d:\\c++\\4.2\\tanks\\tanks\\intermediate\\build\\win64\\unrealeditor\\inc\\tanks\\gamepool.generated.h"
         ],
         "ImportedModules": [],
         "ImportedHeaderUnits": []

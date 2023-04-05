@@ -4,6 +4,7 @@
 
 #include "CoreMinimal.h"
 #include "GameFramework/Pawn.h"
+#include "AmmoBox.h"
 #include "TankPawn.generated.h"
 
 class UStaticMeshComponent;
@@ -31,10 +32,20 @@ public:
 	void Fire();
 	void FireTypeChange();
 	void SetFireAlternative();
-	void SetupCannon(TSubclassOf<ACannon> NewCannonClass);
+	void SetupCannon(TSubclassOf<ACannon> NewCannonClass,AAmmoBox *AmmoBox=nullptr);
 
 
+	UPROPERTY()
+		ACannon* Cannon;
+	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "Cannon")
+		TSubclassOf<ACannon> CannonClass;
+	/*
+	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "Cannon")
+		TSubclassOf<AProjectile> Projectile_;
+		*/
 
+	UPROPERTY()
+		class AProjectile* Projectile;
 protected:
 	// Called when the game starts or when spawned
 	
@@ -56,13 +67,13 @@ protected:
 
 	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "Components")
 		class UCameraComponent* Camera;
-
+/*
 	UPROPERTY()
 		ACannon* Cannon;
 
 	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "Cannon")
 		TSubclassOf<ACannon> CannonClass;
-
+*/
 	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "Cannon")
 		class UArrowComponent* CannonSetupPoint;
 
@@ -77,12 +88,17 @@ protected:
 
 	UPROPERTY()
 		class ATankPlayerController* TankController;
+	UPROPERTY()
+		class AGamePool* GamePool;
+	
 
 	float targetForwardAxesValue = 0.0f;
 	float targetRightAxesValue = 0.0f;
 	float targetRotateRightAxisValue = 0.0f;
 
-
+	float ProjectileAmmoBuf{ 0 };
+	float TraceAmmoBuf{ 0 };
+	float SpecialAmmoBuf{ 0 };
 	/**/
 
 

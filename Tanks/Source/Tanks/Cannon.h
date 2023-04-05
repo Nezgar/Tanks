@@ -20,22 +20,25 @@ public:
 	void Fire();
 	bool IsReadyToFire();
 	void Reload();
-	void FireTypeChange();
+	//void FireTypeChange(ATankPawn *TankPawn);
 	bool IsEmptyAmmo();
 	void ReloadFullAmmo();
 	void SetFireAlternative();
 	void FireAlternative();
+
+	void FireProjectile();
+	void FireTrace();
+	void FireSpecial();
+	
+	
 	
 
-
-
 protected:
-	// Called when the game starts or when spawned
+	
 	virtual void BeginPlay() override;
 
 public:	
-	// Called every frame
-	//virtual void Tick(float DeltaTime) override;
+	
 
 	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "Components")
 		class UStaticMeshComponent* CannonMesh;
@@ -45,6 +48,9 @@ public:
 
 	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "Fire params")
 		ECannonType CannonType = ECannonType::FireProjectile;
+
+	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "Fire params")
+		TSubclassOf<class AProjectile> ProjectileClass;
 
 	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "Fire params")
 		float FireRate = 0.1f;
@@ -59,11 +65,21 @@ public:
 		float Damage = 1.0f;
 
 	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "Fire params")
-		float Ammo = 100.0f;
+		float ProjectileAmmo = 100.0f;
+
+	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "Fire params")
+		float TraceAmmo = 100.0f;
+
+	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "Fire params")
+		float SpecialAmmo = 100.0f;
 
 	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "Fire params")
 		float FireDelayTime = 0.5f;
 	
+
+
+	UPROPERTY()
+		class AGamePool* GamePool;
 
 	bool bReadyToFire = true;
 	FTimerHandle ReloadTimer;

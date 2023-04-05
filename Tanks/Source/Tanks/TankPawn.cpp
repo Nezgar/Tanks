@@ -13,6 +13,8 @@
 #include "TankPlayerController.h"
 #include "Kismet/KismetMathLibrary.h"
 #include "Cannon.h"
+#include "AmmoBox.h"
+#include "GamePool.h"
 
 
 
@@ -134,7 +136,7 @@ void ATankPawn::TankRotation(float DeltaTime) {
 	yawRotation += currentRotation.Yaw;
 	FRotator newRotation = FRotator(0.0f, yawRotation, 0.0f);
 	SetActorRotation(newRotation);
-	UE_LOG(LogTemp, Warning, TEXT("Non lerp: %f, Lerp: %f"), targetRotateRightAxisValue, LerpRotateValue);
+	//UE_LOG(LogTemp, Warning, TEXT("Non lerp: %f, Lerp: %f"), targetRotateRightAxisValue, LerpRotateValue);
  
 }
 
@@ -154,17 +156,24 @@ void ATankPawn::SetFireAlternative()
 
 void ATankPawn::FireTypeChange()
 {
+	/*
 	if (Cannon) {
-		Cannon->FireTypeChange();
-	}
+		Cannon->FireTypeChange(this);
+	}*/
+	
 }
 
-void ATankPawn::SetupCannon(TSubclassOf<ACannon> newCannonClass)
+void ATankPawn::SetupCannon(TSubclassOf<ACannon> newCannonClass,AAmmoBox *AmmoBox)
 {
 	if (!newCannonClass) {
 		return;
 		}
+
+	
 	if (Cannon) {
+		ProjectileAmmoBuf = Cannon->ProjectileAmmo;
+		TraceAmmoBuf = Cannon->TraceAmmo;
+		SpecialAmmoBuf = Cannon->SpecialAmmo;
 		Cannon->Destroy();
 	}
 
@@ -172,8 +181,11 @@ void ATankPawn::SetupCannon(TSubclassOf<ACannon> newCannonClass)
 	spawnParams.Instigator = this;
 	spawnParams.Owner = this;
 
+	
 	Cannon = GetWorld()->SpawnActor<ACannon>(newCannonClass, spawnParams);
 	Cannon->AttachToComponent(CannonSetupPoint, FAttachmentTransformRules::SnapToTargetNotIncludingScale);
+	ACannon* this_ = Cannon;
+	if(AmmoBox) AmmoBox->AmmoAdd(this_, ProjectileAmmoBuf, TraceAmmoBuf, SpecialAmmoBuf);
 
 }
 
@@ -187,7 +199,7 @@ void ATankPawn::TurretDirection() {
 		targetRotation.Roll = TurretRotation.Roll;
 		FRotator newTurretRotation = FMath::Lerp(TurretRotation, targetRotation, TurretRotationInterpolationKey);
 		TurretMesh->SetWorldRotation(newTurretRotation);
-		UE_LOG(LogTemp,Warning,TEXT("targetRotation: %s, LerpRotation: %s"), *targetRotation.ToString(), *newTurretRotation.ToString())
+		//UE_LOG(LogTemp,Warning,TEXT("targetRotation: %s, LerpRotation: %s"), *targetRotation.ToString(), *newTurretRotation.ToString())
 	} 
 }
 
@@ -229,6 +241,8 @@ void  ATankPawn::BeginPlay() {
 	Super::BeginPlay();
 	TankController = Cast<ATankPlayerController>(GetController());
 	SetupCannon(CannonClass);
+
+	//GamePool->PoolAdd(Projectile);
 
 }
 

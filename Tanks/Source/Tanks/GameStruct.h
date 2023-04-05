@@ -11,11 +11,10 @@
 UENUM(BlueprintType)
 enum class ECannonType : uint8
 {
-	FireProjectile = 0 UMETA(DisplayName = "Use projectiles"),
-	FireTrace = 1 UMETA(DisplayName = "Use projectile"),
+	FireProjectile = 0 UMETA(DisplayName = "Use projectile"),
+	FireTrace = 1 UMETA(DisplayName = "Use Trace"),
 	FireSpecial = 2  UMETA(DisplayName = "Use special")
 };
-
 
 
 UCLASS()
