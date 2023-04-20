@@ -3,15 +3,20 @@
 #pragma once
 
 #include "CoreMinimal.h"
-#include "GameFramework/Pawn.h"
+#include "MachinePawn.h"
 #include "AmmoBox.h"
+#include "DamageTaker.h"
+#include "HealthComponent.h"
+#include "Components/BoxComponent.h"
+#include "Cannon.h"
+
 #include "TankPawn.generated.h"
 
 class UStaticMeshComponent;
 class ACannon;
 
 UCLASS()
-class TANKS_API ATankPawn : public APawn
+class TANKS_API ATankPawn : public AMachinePawn
 {
 	GENERATED_BODY()
 
@@ -29,12 +34,8 @@ public:
 	void RotateRight(float Value);
 	void TurretDirection();
 	void TankRotation(float DeltaTime);
-	void Fire();
-	void FireTypeChange();
-	void SetFireAlternative();
-	void SetupCannon(TSubclassOf<ACannon> NewCannonClass,AAmmoBox *AmmoBox=nullptr);
-
-
+	void SetupCannon(TSubclassOf<ACannon> NewCannonClass, AAmmoBox* AmmoBox = nullptr);
+/*
 	UPROPERTY()
 		ACannon* Cannon;
 	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "Cannon")
@@ -52,14 +53,6 @@ protected:
 	virtual void BeginPlay() override;
 
 	
-	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "Components")
-		UStaticMeshComponent* BodyMesh;
-
-	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "Components")
-		UStaticMeshComponent* TurretMesh;
-	
-	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "Components")
-		class UBoxComponent* BoxCollision;
 
 	
 	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "Components")
@@ -67,15 +60,8 @@ protected:
 
 	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "Components")
 		class UCameraComponent* Camera;
-/*
-	UPROPERTY()
-		ACannon* Cannon;
 
-	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "Cannon")
-		TSubclassOf<ACannon> CannonClass;
-*/
-	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "Cannon")
-		class UArrowComponent* CannonSetupPoint;
+	
 
 	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "Movements")
 		float MoveSpeed = 100.0f;
@@ -90,7 +76,12 @@ protected:
 		class ATankPlayerController* TankController;
 	UPROPERTY()
 		class AGamePool* GamePool;
+
 	
+	UPROPERTY(VisibleDefaultsOnly, BlueprintReadWrite, Category = "Components")
+		UBoxComponent* HitCollider;
+
+
 
 	float targetForwardAxesValue = 0.0f;
 	float targetRightAxesValue = 0.0f;

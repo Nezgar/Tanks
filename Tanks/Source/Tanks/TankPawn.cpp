@@ -18,22 +18,13 @@
 
 
 
+
 // Sets default values
 ATankPawn::ATankPawn()
 {
  	// Set this pawn to call Tick() every frame.  You can turn this off to improve performance if you don't need it.
 	PrimaryActorTick.bCanEverTick = true;
 	
-	BoxCollision = CreateDefaultSubobject<UBoxComponent>(TEXT("RootComponent"));
-	RootComponent = BoxCollision;
-
-	BodyMesh = CreateDefaultSubobject<UStaticMeshComponent>(TEXT("BodyMesh"));
-	BodyMesh->SetupAttachment(BoxCollision);
-
-	
-	TurretMesh = CreateDefaultSubobject<UStaticMeshComponent>(TEXT("TurretMesh"));
-	TurretMesh->SetupAttachment(BodyMesh);
-
 	
 	SpringArm = CreateDefaultSubobject<USpringArmComponent>(TEXT("SpringArm"));
 	SpringArm->SetupAttachment(BoxCollision);
@@ -47,9 +38,36 @@ ATankPawn::ATankPawn()
 	Camera ->SetupAttachment(SpringArm);
 
 
-	CannonSetupPoint = CreateDefaultSubobject<UArrowComponent>(TEXT("CannonSetupPoint"));
-	CannonSetupPoint->SetupAttachment(TurretMesh);
-	/**/
+
+	
+	HitCollider = CreateDefaultSubobject<UBoxComponent>(TEXT("Hit collider"));
+	HitCollider->SetupAttachment(BodyMesh);
+}
+
+
+void ATankPawn::SetupCannon(TSubclassOf<ACannon> newCannonClass, AAmmoBox* AmmoBox)
+{
+	if (!newCannonClass) {
+		return;
+	}
+
+
+	if (Cannon) {
+		ProjectileAmmoBuf = Cannon->ProjectileAmmo;
+		TraceAmmoBuf = Cannon->TraceAmmo;
+		SpecialAmmoBuf = Cannon->SpecialAmmo;
+		Cannon->Destroy();
+	}
+
+	FActorSpawnParameters spawnParams;
+	spawnParams.Instigator = this;
+	spawnParams.Owner = this;
+
+
+	Cannon = GetWorld()->SpawnActor<ACannon>(newCannonClass, spawnParams);
+	Cannon->AttachToComponent(CannonSetupPoint, FAttachmentTransformRules::SnapToTargetNotIncludingScale);
+	ACannon* this_ = Cannon;
+	if (AmmoBox) AmmoBox->AmmoAdd(this_, ProjectileAmmoBuf, TraceAmmoBuf, SpecialAmmoBuf);
 
 }
 
@@ -140,54 +158,7 @@ void ATankPawn::TankRotation(float DeltaTime) {
  
 }
 
-void ATankPawn::Fire()
-{
-	if (Cannon) {
-		Cannon->Fire();
-	}
-}
 
-void ATankPawn::SetFireAlternative()
-{
-	if (Cannon) {
-		Cannon->SetFireAlternative();
-	}
-}
-
-void ATankPawn::FireTypeChange()
-{
-	/*
-	if (Cannon) {
-		Cannon->FireTypeChange(this);
-	}*/
-	
-}
-
-void ATankPawn::SetupCannon(TSubclassOf<ACannon> newCannonClass,AAmmoBox *AmmoBox)
-{
-	if (!newCannonClass) {
-		return;
-		}
-
-	
-	if (Cannon) {
-		ProjectileAmmoBuf = Cannon->ProjectileAmmo;
-		TraceAmmoBuf = Cannon->TraceAmmo;
-		SpecialAmmoBuf = Cannon->SpecialAmmo;
-		Cannon->Destroy();
-	}
-
-	FActorSpawnParameters spawnParams;
-	spawnParams.Instigator = this;
-	spawnParams.Owner = this;
-
-	
-	Cannon = GetWorld()->SpawnActor<ACannon>(newCannonClass, spawnParams);
-	Cannon->AttachToComponent(CannonSetupPoint, FAttachmentTransformRules::SnapToTargetNotIncludingScale);
-	ACannon* this_ = Cannon;
-	if(AmmoBox) AmmoBox->AmmoAdd(this_, ProjectileAmmoBuf, TraceAmmoBuf, SpecialAmmoBuf);
-
-}
 
 //Turret Rotation
 void ATankPawn::TurretDirection() {

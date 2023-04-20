@@ -3,6 +3,7 @@
 
 #include "Projectile.h"
 #include "TankPawn.h"
+#include "DamageTaker.h"
 #include "Components/StaticMeshComponent.h"
 
 AProjectile::AProjectile()
@@ -33,6 +34,31 @@ bool AProjectile::inUse(ACannon Cannon)
 
 void AProjectile::OnMeshOverlapBegin(UPrimitiveComponent* OverlappedComp, AActor* OtherActor, UPrimitiveComponent* OtherComp, int32 OtherBodyIndex, bool bFromSweep, const FHitResult& SweepResult)
 {
+    ///*
+    AActor* owner = GetOwner();
+    AActor* ownerByOwner = owner != nullptr ? owner->GetOwner() : nullptr;
+    if (OtherActor != owner && OtherActor != ownerByOwner)
+    {
+        IDamageTaker* damageTakerActor = Cast<IDamageTaker>(OtherActor);
+        if (damageTakerActor )
+        {
+            FDamageData damageData;
+            damageData.DamageValue = Damage;
+            damageData.Instigator = owner;
+            damageData.DamageMaker = this;
+            damageTakerActor->TakeDamage(damageData);
+        }
+        else if (this) {
+            return;
+        }else {
+            OtherActor->Destroy();
+        }
+        Destroy();
+    }
+    //*/
+
+
+    /*
     ATankPawn* TankPawn = Cast<ATankPawn>(OtherActor);
     if (!TankPawn ) {
         UE_LOG(LogTemp, Warning, TEXT("Overlapped actor: %s"), *OtherActor->GetName());
@@ -40,6 +66,7 @@ void AProjectile::OnMeshOverlapBegin(UPrimitiveComponent* OverlappedComp, AActor
             OtherActor->Destroy();
             Destroy();        
     }
+    */
   
 }
 

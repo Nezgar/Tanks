@@ -68,7 +68,7 @@ public:
 		float ProjectileAmmo = 100.0f;
 
 	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "Fire params")
-		float TraceAmmo = 100.0f;
+		float TraceAmmo = 200.0f;
 
 	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "Fire params")
 		float SpecialAmmo = 100.0f;

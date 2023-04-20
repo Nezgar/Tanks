@@ -1,0 +1,37 @@
+{
+    "Version": "1.2",
+    "Data": {
+        "Source": "d:\\c++\\4.2\\tanks\\tanks\\source\\tanks\\machinepawn.cpp",
+        "ProvidedModule": "",
+        "PCH": "d:\\c++\\4.2\\tanks\\tanks\\intermediate\\build\\win64\\tankseditor\\development\\engine\\sharedpch.engine.shadowerrors.h.pch",
+        "Includes": [
+            "d:\\c++\\4.2\\tanks\\tanks\\intermediate\\build\\win64\\unrealeditor\\development\\tanks\\definitions.tanks.h",
+            "d:\\c++\\4.2\\tanks\\tanks\\source\\tanks\\machinepawn.h",
+            "d:\\c++\\4.2\\tanks\\tanks\\source\\tanks\\damagetaker.h",
+            "d:\\c++\\4.2\\tanks\\tanks\\source\\tanks\\gamestruct.h",
+            "d:\\programms\\ue_5.0\\engine\\source\\runtime\\coreuobject\\public\\uobject\\noexporttypes.h",
+            "d:\\programms\\ue_5.0\\engine\\source\\runtime\\coreuobject\\public\\uobject\\propertyaccessutil.h",
+            "d:\\programms\\ue_5.0\\engine\\source\\runtime\\core\\public\\math\\unitconversion.h",
+            "d:\\programms\\ue_5.0\\engine\\source\\runtime\\core\\public\\math\\unitconversion.inl",
+            "d:\\programms\\ue_5.0\\engine\\source\\runtime\\core\\public\\internationalization\\polyglottextdata.h",
+            "d:\\programms\\ue_5.0\\engine\\source\\runtime\\coreuobject\\public\\assetregistry\\arfilter.h",
+            "d:\\c++\\4.2\\tanks\\tanks\\intermediate\\build\\win64\\unrealeditor\\inc\\tanks\\gamestruct.generated.h",
+            "d:\\c++\\4.2\\tanks\\tanks\\intermediate\\build\\win64\\unrealeditor\\inc\\tanks\\damagetaker.generated.h",
+            "d:\\c++\\4.2\\tanks\\tanks\\source\\tanks\\cannon.h",
+            "d:\\c++\\4.2\\tanks\\tanks\\intermediate\\build\\win64\\unrealeditor\\inc\\tanks\\cannon.generated.h",
+            "d:\\c++\\4.2\\tanks\\tanks\\source\\tanks\\ammobox.h",
+            "d:\\c++\\4.2\\tanks\\tanks\\intermediate\\build\\win64\\unrealeditor\\inc\\tanks\\ammobox.generated.h",
+            "d:\\c++\\4.2\\tanks\\tanks\\source\\tanks\\healthcomponent.h",
+            "d:\\c++\\4.2\\tanks\\tanks\\intermediate\\build\\win64\\unrealeditor\\inc\\tanks\\healthcomponent.generated.h",
+            "d:\\c++\\4.2\\tanks\\tanks\\intermediate\\build\\win64\\unrealeditor\\inc\\tanks\\machinepawn.generated.h",
+            "d:\\programms\\ue_5.0\\engine\\source\\runtime\\engine\\classes\\components\\boxcomponent.h",
+            "d:\\programms\\ue_5.0\\engine\\source\\runtime\\engine\\classes\\components\\shapecomponent.h",
+            "d:\\programms\\ue_5.0\\engine\\intermediate\\build\\win64\\unrealeditor\\inc\\engine\\shapecomponent.generated.h",
+            "d:\\programms\\ue_5.0\\engine\\intermediate\\build\\win64\\unrealeditor\\inc\\engine\\boxcomponent.generated.h",
+            "d:\\programms\\ue_5.0\\engine\\source\\runtime\\engine\\classes\\components\\arrowcomponent.h",
+            "d:\\programms\\ue_5.0\\engine\\intermediate\\build\\win64\\unrealeditor\\inc\\engine\\arrowcomponent.generated.h"
+        ],
+        "ImportedModules": [],
+        "ImportedHeaderUnits": []
+    }
+}

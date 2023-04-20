@@ -142,8 +142,24 @@ void ACannon::FireTrace()
 			UE_LOG(LogTemp, Warning, TEXT("Actor: %s"), *OverlappedActor->GetName());
 
 			// Ignore Tank 
-			ATankPawn* TankPawn = Cast<ATankPawn>(OverlappedActor);
-			if(!TankPawn)OverlappedActor->Destroy();
+			//ATankPawn* TankPawn = Cast<ATankPawn>(OverlappedActor);
+			//if(!TankPawn)OverlappedActor->Destroy();
+
+
+			///*
+			AActor* owner = GetOwner();
+
+			IDamageTaker* damageTakerActor = Cast<IDamageTaker>(OverlappedActor);
+			if (damageTakerActor)
+			{
+				FDamageData damageData;
+				damageData.DamageValue = Damage;
+				damageData.Instigator = OverlappedActor;
+				damageData.DamageMaker = this;
+				damageTakerActor->TakeDamage(damageData);
+			}
+			
+			//*/
 		}
 	}
 	else {

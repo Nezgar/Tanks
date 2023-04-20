@@ -1,0 +1,23 @@
+{
+    "Version": "1.2",
+    "Data": {
+        "Source": "d:\\c++\\4.2\\tanks\\tanks\\intermediate\\build\\win64\\unrealeditor\\inc\\tanks\\damagetaker.gen.cpp",
+        "ProvidedModule": "",
+        "PCH": "d:\\c++\\4.2\\tanks\\tanks\\intermediate\\build\\win64\\tankseditor\\development\\engine\\sharedpch.engine.shadowerrors.h.pch",
+        "Includes": [
+            "d:\\c++\\4.2\\tanks\\tanks\\intermediate\\build\\win64\\unrealeditor\\development\\tanks\\definitions.tanks.h",
+            "d:\\c++\\4.2\\tanks\\tanks\\source\\tanks\\damagetaker.h",
+            "d:\\c++\\4.2\\tanks\\tanks\\source\\tanks\\gamestruct.h",
+            "d:\\programms\\ue_5.0\\engine\\source\\runtime\\coreuobject\\public\\uobject\\noexporttypes.h",
+            "d:\\programms\\ue_5.0\\engine\\source\\runtime\\coreuobject\\public\\uobject\\propertyaccessutil.h",
+            "d:\\programms\\ue_5.0\\engine\\source\\runtime\\core\\public\\math\\unitconversion.h",
+            "d:\\programms\\ue_5.0\\engine\\source\\runtime\\core\\public\\math\\unitconversion.inl",
+            "d:\\programms\\ue_5.0\\engine\\source\\runtime\\core\\public\\internationalization\\polyglottextdata.h",
+            "d:\\programms\\ue_5.0\\engine\\source\\runtime\\coreuobject\\public\\assetregistry\\arfilter.h",
+            "d:\\c++\\4.2\\tanks\\tanks\\intermediate\\build\\win64\\unrealeditor\\inc\\tanks\\gamestruct.generated.h",
+            "d:\\c++\\4.2\\tanks\\tanks\\intermediate\\build\\win64\\unrealeditor\\inc\\tanks\\damagetaker.generated.h"
+        ],
+        "ImportedModules": [],
+        "ImportedHeaderUnits": []
+    }
+}

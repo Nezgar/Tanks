@@ -18,27 +18,21 @@ AGamePool::AGamePool()
 
 void AGamePool::PoolAdd(AActor* OtherActor)
 {
-	GEngine->AddOnScreenDebugMessage(-1, 1.0f, FColor::Red, "FUCK1");
+	
 	AProjectile* Projectile = Cast<AProjectile>(OtherActor);
 	if (!Projectile) {
-		GEngine->AddOnScreenDebugMessage(-1, 1.0f, FColor::Red, "FUCK2");
-		GEngine->AddOnScreenDebugMessage(-1, 1.0f, FColor::Red, "FUCK2");
-		GEngine->AddOnScreenDebugMessage(-1, 1.0f, FColor::Red, "FUCK2");
-		GEngine->AddOnScreenDebugMessage(-1, 1.0f, FColor::Red, "FUCK2");
+	
 
 		PoolAddProjectile();
 	}
-	else {
-		GEngine->AddOnScreenDebugMessage(-1, 1.0f, FColor::Red, "FUCK ELSE");
-	}
+	
 }
 
 void AGamePool::PoolAddProjectile()
 {
 		FActorSpawnParameters spawnParamsProjectile;
 		//spawnParamsProjectile.Owner = this;
-
-		GEngine->AddOnScreenDebugMessage(-1, 1.0f, FColor::Red, "FUCK");
+				
 		for (int i = 0; i < ProjectilePool; i++) {
 			ProjectilePool_[i] = GetWorld()->SpawnActor<AProjectile>(ProjectileClass, spawnParamsProjectile);
 			if (ProjectilePool_[i]) {
