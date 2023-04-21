@@ -26,6 +26,7 @@ public:
 	void Fire();
 	void FireTypeChange();
 	void SetFireAlternative();
+	TSubclassOf<ACannon> GetCannonClass();
 	
 
 	UFUNCTION()
@@ -36,6 +37,8 @@ public:
 	UFUNCTION()
 		void DamageTaked(float DamageValue);
 
+	UPROPERTY()
+		ACannon* Cannon;
 
 protected:
 	virtual void BeginPlay() override;
@@ -53,8 +56,7 @@ protected:
 		UHealthComponent* HealthComponent;
 
 
-	UPROPERTY()
-		ACannon* Cannon;
+	
 
 	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "Cannon")
 		TSubclassOf<ACannon> CannonClass;
@@ -65,4 +67,7 @@ protected:
 	float ProjectileAmmoBuf{ 0 };
 	float TraceAmmoBuf{ 0 };
 	float SpecialAmmoBuf{ 0 };
+
+
+
 };

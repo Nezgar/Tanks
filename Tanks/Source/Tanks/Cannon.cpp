@@ -8,6 +8,10 @@
 #include "TankPawn.h"
 #include "AmmoBox.h"
 #include "GamePool.h"
+#include "Components/AudioComponent.h"
+#include "GameFramework/ForceFeedbackEffect.h"
+#include "Camera/CameraShakeBase.h"
+#include "Particles/ParticleSystemComponent.h"
 
 // Sets default values
 ACannon::ACannon()
@@ -23,6 +27,12 @@ ACannon::ACannon()
 
 	ProjectileSpawnPoint = CreateDefaultSubobject<UArrowComponent>(TEXT("ArrowComponent"));
 	ProjectileSpawnPoint->SetupAttachment(CannonMesh);
+
+	ShootEffect = CreateDefaultSubobject<UParticleSystemComponent>(TEXT("ShootEffect"));
+	ShootEffect->SetupAttachment(ProjectileSpawnPoint);
+
+	AudioEffect = CreateDefaultSubobject<UAudioComponent>(TEXT("AudioEffect"));
+	AudioEffect->SetupAttachment(SceneComp);
 }
 
 void ACannon::Fire()
@@ -30,6 +40,35 @@ void ACannon::Fire()
 	if (!IsReadyToFire()) {
 		return;
 	}
+
+	ShootEffect->ActivateSystem();
+	AudioEffect->Play();
+
+	if (ShootShake)
+	{
+		GetWorld()->GetFirstPlayerController()->ClientStartCameraShake(ShootShake);
+	}
+
+	/*
+	if (GetOwner() && GetOwner() ==	GetWorld()->GetFirstPlayerController()->GetPawn())
+	{
+		if (ShootForceEffect)
+		{
+			FForceFeedbackParameters shootForceEffectParams;
+			shootForceEffectParams.bLooping = false;
+			shootForceEffectParams.Tag = "shootForceEffectParams";
+			GetWorld()->GetFirstPlayerController()->ClientPlayForceFeedback(ShootForceEffect, shootForceEffectParams);
+		}
+		if (ShootShake)
+		{
+			GetWorld()->GetFirstPlayerController()->ClientPlayCameraShake(ShootShake);
+		}
+	}
+	*/
+
+
+
+
 
 	if (IsEmptyAmmo() != true) {
 		

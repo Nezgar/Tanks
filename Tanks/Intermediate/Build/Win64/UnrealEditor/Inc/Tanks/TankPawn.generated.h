@@ -14,8 +14,22 @@ PRAGMA_DISABLE_DEPRECATION_WARNINGS
 #define TANKS_TankPawn_generated_h
 
 #define FID_Tanks_Source_Tanks_TankPawn_h_21_SPARSE_DATA
-#define FID_Tanks_Source_Tanks_TankPawn_h_21_RPC_WRAPPERS
-#define FID_Tanks_Source_Tanks_TankPawn_h_21_RPC_WRAPPERS_NO_PURE_DECLS
+#define FID_Tanks_Source_Tanks_TankPawn_h_21_RPC_WRAPPERS \
+ \
+	DECLARE_FUNCTION(execGetMovementAccurency); \
+	DECLARE_FUNCTION(execGetPatrollingPoints); \
+	DECLARE_FUNCTION(execRotateTurretTo); \
+	DECLARE_FUNCTION(execGetTurretForwardVector);
+
+
+#define FID_Tanks_Source_Tanks_TankPawn_h_21_RPC_WRAPPERS_NO_PURE_DECLS \
+ \
+	DECLARE_FUNCTION(execGetMovementAccurency); \
+	DECLARE_FUNCTION(execGetPatrollingPoints); \
+	DECLARE_FUNCTION(execRotateTurretTo); \
+	DECLARE_FUNCTION(execGetTurretForwardVector);
+
+
 #define FID_Tanks_Source_Tanks_TankPawn_h_21_INCLASS_NO_PURE_DECLS \
 private: \
 	static void StaticRegisterNativesATankPawn(); \

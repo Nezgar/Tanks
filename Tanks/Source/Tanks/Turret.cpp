@@ -64,11 +64,11 @@ void ATurret::Destroyed()
 }
 void ATurret::Targeting()
 {
-	if (IsPlayerInRange())
+	if (IsPlayerInRange() )
 	{
 		RotateToPlayer();
 
-		if (CanFire())
+		if (CanFire() && IsPlayerSeen())
 		{
 			Fire();
 		}
@@ -95,6 +95,31 @@ bool ATurret::CanFire()
 	dirToPlayer.Normalize();
 	float aimAngle = FMath::RadiansToDegrees(acosf(FVector::DotProduct(targetingDir, dirToPlayer)));
 	return aimAngle <= Accurency; 
+}
+
+bool ATurret::IsPlayerSeen() {
+	FVector playerPos = PlayerPawn->GetActorLocation();
+	FVector eyesPos = this->GetEyesPosition();
+	FHitResult hitResult;
+	FCollisionQueryParams traceParams =	FCollisionQueryParams(FName(TEXT("FireTrace")), true, this);
+	traceParams.bTraceComplex = true;
+	traceParams.AddIgnoredActor(this);
+	traceParams.bReturnPhysicalMaterial = false;
+	if (GetWorld()->LineTraceSingleByChannel(hitResult, eyesPos, playerPos,	ECollisionChannel::ECC_Visibility, traceParams))
+	{
+		if (hitResult.GetActor())
+		{
+			DrawDebugLine(GetWorld(), eyesPos, hitResult.Location, FColor::Cyan, false, 0.5f, 0, 10);
+			return hitResult.GetActor() == PlayerPawn;
+		}
+	}
+	DrawDebugLine(GetWorld(), eyesPos, playerPos, FColor::Cyan, false, 0.5f, 0, 10);
+	return false;
+};
+
+FVector ATurret::GetEyesPosition()
+{
+	return CannonSetupPoint->GetComponentLocation();
 }
 
 /*

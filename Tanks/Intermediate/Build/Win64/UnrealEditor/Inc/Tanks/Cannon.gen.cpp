@@ -18,6 +18,10 @@ void EmptyLinkFunctionForGeneratedCodeCannon() {}
 	TANKS_API UEnum* Z_Construct_UEnum_Tanks_ECannonType();
 	COREUOBJECT_API UClass* Z_Construct_UClass_UClass();
 	TANKS_API UClass* Z_Construct_UClass_AProjectile_NoRegister();
+	ENGINE_API UClass* Z_Construct_UClass_UParticleSystemComponent_NoRegister();
+	ENGINE_API UClass* Z_Construct_UClass_UAudioComponent_NoRegister();
+	ENGINE_API UClass* Z_Construct_UClass_UForceFeedbackEffect_NoRegister();
+	ENGINE_API UClass* Z_Construct_UClass_UCameraShakeBase_NoRegister();
 	TANKS_API UClass* Z_Construct_UClass_AGamePool_NoRegister();
 // End Cross Module References
 	void ACannon::StaticRegisterNativesACannon()
@@ -83,6 +87,22 @@ void EmptyLinkFunctionForGeneratedCodeCannon() {}
 		static const UECodeGen_Private::FMetaDataPairParam NewProp_FireDelayTime_MetaData[];
 #endif
 		static const UECodeGen_Private::FFloatPropertyParams NewProp_FireDelayTime;
+#if WITH_METADATA
+		static const UECodeGen_Private::FMetaDataPairParam NewProp_ShootEffect_MetaData[];
+#endif
+		static const UECodeGen_Private::FObjectPropertyParams NewProp_ShootEffect;
+#if WITH_METADATA
+		static const UECodeGen_Private::FMetaDataPairParam NewProp_AudioEffect_MetaData[];
+#endif
+		static const UECodeGen_Private::FObjectPropertyParams NewProp_AudioEffect;
+#if WITH_METADATA
+		static const UECodeGen_Private::FMetaDataPairParam NewProp_ShootForceEffect_MetaData[];
+#endif
+		static const UECodeGen_Private::FObjectPropertyParams NewProp_ShootForceEffect;
+#if WITH_METADATA
+		static const UECodeGen_Private::FMetaDataPairParam NewProp_ShootShake_MetaData[];
+#endif
+		static const UECodeGen_Private::FClassPropertyParams NewProp_ShootShake;
 #if WITH_METADATA
 		static const UECodeGen_Private::FMetaDataPairParam NewProp_GamePool_MetaData[];
 #endif
@@ -189,6 +209,38 @@ void EmptyLinkFunctionForGeneratedCodeCannon() {}
 #endif
 	const UECodeGen_Private::FFloatPropertyParams Z_Construct_UClass_ACannon_Statics::NewProp_FireDelayTime = { "FireDelayTime", nullptr, (EPropertyFlags)0x0010000000000005, UECodeGen_Private::EPropertyGenFlags::Float, RF_Public|RF_Transient|RF_MarkAsNative, 1, STRUCT_OFFSET(ACannon, FireDelayTime), METADATA_PARAMS(Z_Construct_UClass_ACannon_Statics::NewProp_FireDelayTime_MetaData, UE_ARRAY_COUNT(Z_Construct_UClass_ACannon_Statics::NewProp_FireDelayTime_MetaData)) };
 #if WITH_METADATA
+	const UECodeGen_Private::FMetaDataPairParam Z_Construct_UClass_ACannon_Statics::NewProp_ShootEffect_MetaData[] = {
+		{ "Category", "Effects" },
+		{ "Comment", "// Effects\n" },
+		{ "EditInline", "true" },
+		{ "ModuleRelativePath", "Cannon.h" },
+		{ "ToolTip", "Effects" },
+	};
+#endif
+	const UECodeGen_Private::FObjectPropertyParams Z_Construct_UClass_ACannon_Statics::NewProp_ShootEffect = { "ShootEffect", nullptr, (EPropertyFlags)0x00100000000b000d, UECodeGen_Private::EPropertyGenFlags::Object, RF_Public|RF_Transient|RF_MarkAsNative, 1, STRUCT_OFFSET(ACannon, ShootEffect), Z_Construct_UClass_UParticleSystemComponent_NoRegister, METADATA_PARAMS(Z_Construct_UClass_ACannon_Statics::NewProp_ShootEffect_MetaData, UE_ARRAY_COUNT(Z_Construct_UClass_ACannon_Statics::NewProp_ShootEffect_MetaData)) };
+#if WITH_METADATA
+	const UECodeGen_Private::FMetaDataPairParam Z_Construct_UClass_ACannon_Statics::NewProp_AudioEffect_MetaData[] = {
+		{ "Category", "Effects" },
+		{ "EditInline", "true" },
+		{ "ModuleRelativePath", "Cannon.h" },
+	};
+#endif
+	const UECodeGen_Private::FObjectPropertyParams Z_Construct_UClass_ACannon_Statics::NewProp_AudioEffect = { "AudioEffect", nullptr, (EPropertyFlags)0x00100000000b000d, UECodeGen_Private::EPropertyGenFlags::Object, RF_Public|RF_Transient|RF_MarkAsNative, 1, STRUCT_OFFSET(ACannon, AudioEffect), Z_Construct_UClass_UAudioComponent_NoRegister, METADATA_PARAMS(Z_Construct_UClass_ACannon_Statics::NewProp_AudioEffect_MetaData, UE_ARRAY_COUNT(Z_Construct_UClass_ACannon_Statics::NewProp_AudioEffect_MetaData)) };
+#if WITH_METADATA
+	const UECodeGen_Private::FMetaDataPairParam Z_Construct_UClass_ACannon_Statics::NewProp_ShootForceEffect_MetaData[] = {
+		{ "Category", "Effects" },
+		{ "ModuleRelativePath", "Cannon.h" },
+	};
+#endif
+	const UECodeGen_Private::FObjectPropertyParams Z_Construct_UClass_ACannon_Statics::NewProp_ShootForceEffect = { "ShootForceEffect", nullptr, (EPropertyFlags)0x0010000000000005, UECodeGen_Private::EPropertyGenFlags::Object, RF_Public|RF_Transient|RF_MarkAsNative, 1, STRUCT_OFFSET(ACannon, ShootForceEffect), Z_Construct_UClass_UForceFeedbackEffect_NoRegister, METADATA_PARAMS(Z_Construct_UClass_ACannon_Statics::NewProp_ShootForceEffect_MetaData, UE_ARRAY_COUNT(Z_Construct_UClass_ACannon_Statics::NewProp_ShootForceEffect_MetaData)) };
+#if WITH_METADATA
+	const UECodeGen_Private::FMetaDataPairParam Z_Construct_UClass_ACannon_Statics::NewProp_ShootShake_MetaData[] = {
+		{ "Category", "Cannon" },
+		{ "ModuleRelativePath", "Cannon.h" },
+	};
+#endif
+	const UECodeGen_Private::FClassPropertyParams Z_Construct_UClass_ACannon_Statics::NewProp_ShootShake = { "ShootShake", nullptr, (EPropertyFlags)0x0014000000000001, UECodeGen_Private::EPropertyGenFlags::Class, RF_Public|RF_Transient|RF_MarkAsNative, 1, STRUCT_OFFSET(ACannon, ShootShake), Z_Construct_UClass_UCameraShakeBase_NoRegister, Z_Construct_UClass_UClass, METADATA_PARAMS(Z_Construct_UClass_ACannon_Statics::NewProp_ShootShake_MetaData, UE_ARRAY_COUNT(Z_Construct_UClass_ACannon_Statics::NewProp_ShootShake_MetaData)) };
+#if WITH_METADATA
 	const UECodeGen_Private::FMetaDataPairParam Z_Construct_UClass_ACannon_Statics::NewProp_GamePool_MetaData[] = {
 		{ "ModuleRelativePath", "Cannon.h" },
 	};
@@ -208,6 +260,10 @@ void EmptyLinkFunctionForGeneratedCodeCannon() {}
 		(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_ACannon_Statics::NewProp_TraceAmmo,
 		(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_ACannon_Statics::NewProp_SpecialAmmo,
 		(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_ACannon_Statics::NewProp_FireDelayTime,
+		(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_ACannon_Statics::NewProp_ShootEffect,
+		(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_ACannon_Statics::NewProp_AudioEffect,
+		(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_ACannon_Statics::NewProp_ShootForceEffect,
+		(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_ACannon_Statics::NewProp_ShootShake,
 		(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_ACannon_Statics::NewProp_GamePool,
 	};
 	const FCppClassTypeInfoStatic Z_Construct_UClass_ACannon_Statics::StaticCppClassTypeInfo = {
@@ -246,9 +302,9 @@ void EmptyLinkFunctionForGeneratedCodeCannon() {}
 		static const FClassRegisterCompiledInInfo ClassInfo[];
 	};
 	const FClassRegisterCompiledInInfo Z_CompiledInDeferFile_FID_Tanks_Source_Tanks_Cannon_h_Statics::ClassInfo[] = {
-		{ Z_Construct_UClass_ACannon, ACannon::StaticClass, TEXT("ACannon"), &Z_Registration_Info_UClass_ACannon, CONSTRUCT_RELOAD_VERSION_INFO(FClassReloadVersionInfo, sizeof(ACannon), 432865370U) },
+		{ Z_Construct_UClass_ACannon, ACannon::StaticClass, TEXT("ACannon"), &Z_Registration_Info_UClass_ACannon, CONSTRUCT_RELOAD_VERSION_INFO(FClassReloadVersionInfo, sizeof(ACannon), 3833070305U) },
 	};
-	static FRegisterCompiledInInfo Z_CompiledInDeferFile_FID_Tanks_Source_Tanks_Cannon_h_664698948(TEXT("/Script/Tanks"),
+	static FRegisterCompiledInInfo Z_CompiledInDeferFile_FID_Tanks_Source_Tanks_Cannon_h_3783893410(TEXT("/Script/Tanks"),
 		Z_CompiledInDeferFile_FID_Tanks_Source_Tanks_Cannon_h_Statics::ClassInfo, UE_ARRAY_COUNT(Z_CompiledInDeferFile_FID_Tanks_Source_Tanks_Cannon_h_Statics::ClassInfo),
 		nullptr, 0,
 		nullptr, 0);

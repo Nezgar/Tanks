@@ -57,6 +57,11 @@ void AMachinePawn::SetFireAlternative()
 	}
 }
 
+TSubclassOf<ACannon> AMachinePawn::GetCannonClass()
+{
+	return CannonClass;
+}
+
 void AMachinePawn::TakeDamage(FDamageData DamageData)
 {
 	HealthComponent->TakeDamage(DamageData);

@@ -9,6 +9,7 @@
 #include "Cannon.h"
 #include "DamageTaker.h"
 #include "HealthComponent.h"
+#include "TankPawn.h"
 
 #include "Turret.generated.h"
 
@@ -21,10 +22,11 @@ public:
 	// Sets default values for this actor's properties
 	ATurret();
 
-	
+	FVector GetEyesPosition();
 
 protected:
 
+	
 	
 	UPROPERTY()
 		APawn* PlayerPawn;
@@ -50,7 +52,7 @@ protected:
 	void RotateToPlayer();
 	bool IsPlayerInRange();
 	bool CanFire();
-	
+	bool IsPlayerSeen();
 
 	
 

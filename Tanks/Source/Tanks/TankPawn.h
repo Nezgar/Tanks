@@ -27,7 +27,7 @@ public:
 	// Called every frame
 	virtual void Tick(float DeltaTime) override;
 
-	void GetPosition(float Value);
+	//void GetPosition(float Value);
 
 	void MoveForward(float Value); 
 	void MoveRight(float Value);
@@ -35,6 +35,8 @@ public:
 	void TurretDirection();
 	void TankRotation(float DeltaTime);
 	void SetupCannon(TSubclassOf<ACannon> NewCannonClass, AAmmoBox* AmmoBox = nullptr);
+	void AIChangeCannon();
+
 /*
 	UPROPERTY()
 		ACannon* Cannon;
@@ -47,6 +49,17 @@ public:
 
 	UPROPERTY()
 		class AProjectile* Projectile;
+
+
+	//AiTank
+	UFUNCTION()
+		FVector GetTurretForwardVector();
+	UFUNCTION()
+		void RotateTurretTo(FVector TargetPosition);
+
+	FVector GetEyesPosition();
+
+
 protected:
 	// Called when the game starts or when spawned
 	
@@ -83,8 +96,8 @@ protected:
 
 
 
-	float targetForwardAxesValue = 0.0f;
-	float targetRightAxesValue = 0.0f;
+	float targetForwardAxisValue = 0.0f;
+	float targetRightAxisValue = 0.0f;
 	float targetRotateRightAxisValue = 0.0f;
 
 	float ProjectileAmmoBuf{ 0 };
@@ -94,10 +107,25 @@ protected:
 
 
 
+		// Tank AI
+	
+	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "AI|Move params|Patrol points", Meta = (MakeEditWidget = true))
+		TArray<FVector> PatrollingPoints;
 
-	/*
-	// Called to bind functionality to input
-	virtual void SetupPlayerInputComponent(class UInputComponent* PlayerInputComponent) override;
-	*/
+	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "AI|Move params | Accurency")
+		float MovementAccurency = 50;
+
+	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "AI|Fire Change")
+		float WeaponChangeDelay = 5;
+
+public:
+
+	UFUNCTION()
+		TArray<FVector> GetPatrollingPoints() { return PatrollingPoints; };
+	UFUNCTION()
+		float GetMovementAccurency() { return MovementAccurency; };
+		
+
+	
 };
 

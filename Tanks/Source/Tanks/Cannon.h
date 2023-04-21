@@ -4,6 +4,12 @@
 
 #include "CoreMinimal.h"
 #include "GameFramework/Actor.h"
+#include "Components/AudioComponent.h"
+#include "GameFramework/Actor.h"
+#include "GameFramework/ForceFeedbackEffect.h"
+#include "Particles/ParticleSystemComponent.h"
+#include "Camera/CameraShakeBase.h"
+
 
 #include "GameStruct.h"
 #include "Cannon.generated.h"
@@ -76,7 +82,17 @@ public:
 	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "Fire params")
 		float FireDelayTime = 0.5f;
 	
+	// Effects
+	UPROPERTY(VisibleDefaultsOnly, BlueprintReadWrite, Category = "Effects")
+		UParticleSystemComponent* ShootEffect;
+	UPROPERTY(VisibleDefaultsOnly, BlueprintReadWrite, Category = "Effects")
+		UAudioComponent* AudioEffect;
 
+	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "Effects")
+		UForceFeedbackEffect* ShootForceEffect;
+
+	UPROPERTY(EditAnywhere)
+		TSubclassOf<UCameraShakeBase> ShootShake;
 
 	UPROPERTY()
 		class AGamePool* GamePool;
