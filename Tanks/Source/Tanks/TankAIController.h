@@ -59,6 +59,9 @@ protected:
 	bool IsPlayerSeen();
 
 	void WeaponChange();
+
+	void Initialize();
+
 	
 	FTimerHandle WeaponChangeTimerLoop;
 

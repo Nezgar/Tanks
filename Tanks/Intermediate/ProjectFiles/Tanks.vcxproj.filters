@@ -83,6 +83,12 @@
     <ClInclude Include="..\..\Source\Tanks\MachinePawn.h">
       <Filter>Source\Tanks</Filter>
     </ClInclude>
+    <ClCompile Include="..\..\Source\Tanks\MapLoader.cpp">
+      <Filter>Source\Tanks</Filter>
+    </ClCompile>
+    <ClInclude Include="..\..\Source\Tanks\MapLoader.h">
+      <Filter>Source\Tanks</Filter>
+    </ClInclude>
     <ClCompile Include="..\..\Source\Tanks\ParentTank.cpp">
       <Filter>Source\Tanks</Filter>
     </ClCompile>
@@ -99,6 +105,12 @@
       <Filter>Source\Tanks</Filter>
     </ClCompile>
     <ClInclude Include="..\..\Source\Tanks\TankAIController.h">
+      <Filter>Source\Tanks</Filter>
+    </ClInclude>
+    <ClCompile Include="..\..\Source\Tanks\TankFactory.cpp">
+      <Filter>Source\Tanks</Filter>
+    </ClCompile>
+    <ClInclude Include="..\..\Source\Tanks\TankFactory.h">
       <Filter>Source\Tanks</Filter>
     </ClInclude>
     <ClCompile Include="..\..\Source\Tanks\TankPawn.cpp">

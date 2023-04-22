@@ -1,4 +1,4 @@
-D:\C++\4.2\Tanks\Tanks\Source\Tanks\TankAIController.cpp
+D:\C++\4.2\Tanks\Tanks\Source\Tanks\TAnkAIController.cpp
 /I .
 /I ..\Intermediate\Build\Win64\UnrealEditor\Inc\Engine
 /I Runtime
@@ -277,8 +277,8 @@ D:\C++\4.2\Tanks\Tanks\Source\Tanks\TankAIController.cpp
 /FI"D:\C++\4.2\Tanks\Tanks\Intermediate\Build\Win64\UnrealEditor\Development\Tanks\Definitions.Tanks.h"
 /Yu"D:\C++\4.2\Tanks\Tanks\Intermediate\Build\Win64\TanksEditor\Development\Engine\SharedPCH.Engine.ShadowErrors.h"
 /Fp"D:\C++\4.2\Tanks\Tanks\Intermediate\Build\Win64\TanksEditor\Development\Engine\SharedPCH.Engine.ShadowErrors.h.pch"
-/Fo"D:\C++\4.2\Tanks\Tanks\Intermediate\Build\Win64\UnrealEditor\Development\Tanks\TankAIController.cpp.lc.obj"
-/sourceDependencies"D:\C++\4.2\Tanks\Tanks\Intermediate\Build\Win64\UnrealEditor\Development\Tanks\TankAIController.cpp.lc.json"
+/Fo"D:\C++\4.2\Tanks\Tanks\Intermediate\Build\Win64\UnrealEditor\Development\Tanks\TAnkAIController.cpp.lc.obj"
+/sourceDependencies"D:\C++\4.2\Tanks\Tanks\Intermediate\Build\Win64\UnrealEditor\Development\Tanks\TAnkAIController.cpp.lc.json"
 /Zc:inline
 /nologo
 /Oi

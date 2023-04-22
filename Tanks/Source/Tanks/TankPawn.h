@@ -9,6 +9,7 @@
 #include "HealthComponent.h"
 #include "Components/BoxComponent.h"
 #include "Cannon.h"
+#include "Engine/TargetPoint.h"
 
 #include "TankPawn.generated.h"
 
@@ -108,9 +109,10 @@ protected:
 
 
 		// Tank AI
-	
+	/*
 	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "AI|Move params|Patrol points", Meta = (MakeEditWidget = true))
 		TArray<FVector> PatrollingPoints;
+		*/
 
 	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "AI|Move params | Accurency")
 		float MovementAccurency = 50;
@@ -118,10 +120,15 @@ protected:
 	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "AI|Fire Change")
 		float WeaponChangeDelay = 5;
 
-public:
+	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "AI|Move params|Patrol	points" , Meta = (MakeEditWidget = true))
+		TArray<ATargetPoint*> PatrollingPoints;
 
-	UFUNCTION()
-		TArray<FVector> GetPatrollingPoints() { return PatrollingPoints; };
+public:
+	TArray<FVector> GetPatrollingPoints();
+	void SetPatrollingPoints(TArray<ATargetPoint*> NewPatrollingPoints);
+
+	//UFUNCTION()
+	//	TArray<FVector> GetPatrollingPoints() { return PatrollingPoints; };
 	UFUNCTION()
 		float GetMovementAccurency() { return MovementAccurency; };
 		
