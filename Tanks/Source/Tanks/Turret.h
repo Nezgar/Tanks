@@ -54,7 +54,7 @@ protected:
 	bool CanFire();
 	bool IsPlayerSeen();
 
-	
+	virtual void PostInitializeComponents() override;
 
 
 };

@@ -95,6 +95,18 @@
     <ClInclude Include="..\..\Source\Tanks\ParentTank.h">
       <Filter>Source\Tanks</Filter>
     </ClInclude>
+    <ClCompile Include="..\..\Source\Tanks\PhysicsComponent.cpp">
+      <Filter>Source\Tanks</Filter>
+    </ClCompile>
+    <ClInclude Include="..\..\Source\Tanks\PhysicsComponent.h">
+      <Filter>Source\Tanks</Filter>
+    </ClInclude>
+    <ClCompile Include="..\..\Source\Tanks\PhysicsProjectile.cpp">
+      <Filter>Source\Tanks</Filter>
+    </ClCompile>
+    <ClInclude Include="..\..\Source\Tanks\PhysicsProjectile.h">
+      <Filter>Source\Tanks</Filter>
+    </ClInclude>
     <ClCompile Include="..\..\Source\Tanks\Projectile.cpp">
       <Filter>Source\Tanks</Filter>
     </ClCompile>

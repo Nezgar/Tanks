@@ -59,7 +59,7 @@ void EmptyLinkFunctionForGeneratedCodeProjectile() {}
 		{ "ModuleRelativePath", "Projectile.h" },
 	};
 #endif
-	const UECodeGen_Private::FFunctionParams Z_Construct_UFunction_AProjectile_Move_Statics::FuncParams = { (UObject*(*)())Z_Construct_UClass_AProjectile, nullptr, "Move", nullptr, nullptr, 0, nullptr, 0, RF_Public|RF_Transient|RF_MarkAsNative, (EFunctionFlags)0x00080401, 0, 0, METADATA_PARAMS(Z_Construct_UFunction_AProjectile_Move_Statics::Function_MetaDataParams, UE_ARRAY_COUNT(Z_Construct_UFunction_AProjectile_Move_Statics::Function_MetaDataParams)) };
+	const UECodeGen_Private::FFunctionParams Z_Construct_UFunction_AProjectile_Move_Statics::FuncParams = { (UObject*(*)())Z_Construct_UClass_AProjectile, nullptr, "Move", nullptr, nullptr, 0, nullptr, 0, RF_Public|RF_Transient|RF_MarkAsNative, (EFunctionFlags)0x00080400, 0, 0, METADATA_PARAMS(Z_Construct_UFunction_AProjectile_Move_Statics::Function_MetaDataParams, UE_ARRAY_COUNT(Z_Construct_UFunction_AProjectile_Move_Statics::Function_MetaDataParams)) };
 	UFunction* Z_Construct_UFunction_AProjectile_Move()
 	{
 		static UFunction* ReturnFunction = nullptr;
@@ -163,6 +163,10 @@ void EmptyLinkFunctionForGeneratedCodeProjectile() {}
 		static const UECodeGen_Private::FMetaDataPairParam Class_MetaDataParams[];
 #endif
 #if WITH_METADATA
+		static const UECodeGen_Private::FMetaDataPairParam NewProp_PushForce_MetaData[];
+#endif
+		static const UECodeGen_Private::FFloatPropertyParams NewProp_PushForce;
+#if WITH_METADATA
 		static const UECodeGen_Private::FMetaDataPairParam NewProp_ProjectileMesh_MetaData[];
 #endif
 		static const UECodeGen_Private::FObjectPropertyParams NewProp_ProjectileMesh;
@@ -178,6 +182,11 @@ void EmptyLinkFunctionForGeneratedCodeProjectile() {}
 		static const UECodeGen_Private::FMetaDataPairParam NewProp_Damage_MetaData[];
 #endif
 		static const UECodeGen_Private::FFloatPropertyParams NewProp_Damage;
+#if WITH_METADATA
+		static const UECodeGen_Private::FMetaDataPairParam NewProp_isExplodeOn_MetaData[];
+#endif
+		static void NewProp_isExplodeOn_SetBit(void* Obj);
+		static const UECodeGen_Private::FBoolPropertyParams NewProp_isExplodeOn;
 		static const UECodeGen_Private::FPropertyParamsBase* const PropPointers[];
 		static const FCppClassTypeInfoStatic StaticCppClassTypeInfo;
 		static const UECodeGen_Private::FClassParams ClassParams;
@@ -187,7 +196,7 @@ void EmptyLinkFunctionForGeneratedCodeProjectile() {}
 		(UObject* (*)())Z_Construct_UPackage__Script_Tanks,
 	};
 	const FClassFunctionLinkInfo Z_Construct_UClass_AProjectile_Statics::FuncInfo[] = {
-		{ &Z_Construct_UFunction_AProjectile_Move, "Move" }, // 3067496273
+		{ &Z_Construct_UFunction_AProjectile_Move, "Move" }, // 1191975433
 		{ &Z_Construct_UFunction_AProjectile_OnMeshOverlapBegin, "OnMeshOverlapBegin" }, // 2767288945
 	};
 #if WITH_METADATA
@@ -196,6 +205,13 @@ void EmptyLinkFunctionForGeneratedCodeProjectile() {}
 		{ "ModuleRelativePath", "Projectile.h" },
 	};
 #endif
+#if WITH_METADATA
+	const UECodeGen_Private::FMetaDataPairParam Z_Construct_UClass_AProjectile_Statics::NewProp_PushForce_MetaData[] = {
+		{ "Category", "Damage" },
+		{ "ModuleRelativePath", "Projectile.h" },
+	};
+#endif
+	const UECodeGen_Private::FFloatPropertyParams Z_Construct_UClass_AProjectile_Statics::NewProp_PushForce = { "PushForce", nullptr, (EPropertyFlags)0x0020080000010005, UECodeGen_Private::EPropertyGenFlags::Float, RF_Public|RF_Transient|RF_MarkAsNative, 1, STRUCT_OFFSET(AProjectile, PushForce), METADATA_PARAMS(Z_Construct_UClass_AProjectile_Statics::NewProp_PushForce_MetaData, UE_ARRAY_COUNT(Z_Construct_UClass_AProjectile_Statics::NewProp_PushForce_MetaData)) };
 #if WITH_METADATA
 	const UECodeGen_Private::FMetaDataPairParam Z_Construct_UClass_AProjectile_Statics::NewProp_ProjectileMesh_MetaData[] = {
 		{ "Category", "Components" },
@@ -225,11 +241,24 @@ void EmptyLinkFunctionForGeneratedCodeProjectile() {}
 	};
 #endif
 	const UECodeGen_Private::FFloatPropertyParams Z_Construct_UClass_AProjectile_Statics::NewProp_Damage = { "Damage", nullptr, (EPropertyFlags)0x0020080000000005, UECodeGen_Private::EPropertyGenFlags::Float, RF_Public|RF_Transient|RF_MarkAsNative, 1, STRUCT_OFFSET(AProjectile, Damage), METADATA_PARAMS(Z_Construct_UClass_AProjectile_Statics::NewProp_Damage_MetaData, UE_ARRAY_COUNT(Z_Construct_UClass_AProjectile_Statics::NewProp_Damage_MetaData)) };
+#if WITH_METADATA
+	const UECodeGen_Private::FMetaDataPairParam Z_Construct_UClass_AProjectile_Statics::NewProp_isExplodeOn_MetaData[] = {
+		{ "Category", "Fire type" },
+		{ "ModuleRelativePath", "Projectile.h" },
+	};
+#endif
+	void Z_Construct_UClass_AProjectile_Statics::NewProp_isExplodeOn_SetBit(void* Obj)
+	{
+		((AProjectile*)Obj)->isExplodeOn = 1;
+	}
+	const UECodeGen_Private::FBoolPropertyParams Z_Construct_UClass_AProjectile_Statics::NewProp_isExplodeOn = { "isExplodeOn", nullptr, (EPropertyFlags)0x0020080000000005, UECodeGen_Private::EPropertyGenFlags::Bool | UECodeGen_Private::EPropertyGenFlags::NativeBool, RF_Public|RF_Transient|RF_MarkAsNative, 1, sizeof(bool), sizeof(AProjectile), &Z_Construct_UClass_AProjectile_Statics::NewProp_isExplodeOn_SetBit, METADATA_PARAMS(Z_Construct_UClass_AProjectile_Statics::NewProp_isExplodeOn_MetaData, UE_ARRAY_COUNT(Z_Construct_UClass_AProjectile_Statics::NewProp_isExplodeOn_MetaData)) };
 	const UECodeGen_Private::FPropertyParamsBase* const Z_Construct_UClass_AProjectile_Statics::PropPointers[] = {
+		(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_AProjectile_Statics::NewProp_PushForce,
 		(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_AProjectile_Statics::NewProp_ProjectileMesh,
 		(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_AProjectile_Statics::NewProp_MoveSpeed,
 		(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_AProjectile_Statics::NewProp_MoveRate,
 		(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_AProjectile_Statics::NewProp_Damage,
+		(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_AProjectile_Statics::NewProp_isExplodeOn,
 	};
 	const FCppClassTypeInfoStatic Z_Construct_UClass_AProjectile_Statics::StaticCppClassTypeInfo = {
 		TCppClassTypeTraits<AProjectile>::IsAbstract,
@@ -267,9 +296,9 @@ void EmptyLinkFunctionForGeneratedCodeProjectile() {}
 		static const FClassRegisterCompiledInInfo ClassInfo[];
 	};
 	const FClassRegisterCompiledInInfo Z_CompiledInDeferFile_FID_Tanks_Source_Tanks_Projectile_h_Statics::ClassInfo[] = {
-		{ Z_Construct_UClass_AProjectile, AProjectile::StaticClass, TEXT("AProjectile"), &Z_Registration_Info_UClass_AProjectile, CONSTRUCT_RELOAD_VERSION_INFO(FClassReloadVersionInfo, sizeof(AProjectile), 2465686U) },
+		{ Z_Construct_UClass_AProjectile, AProjectile::StaticClass, TEXT("AProjectile"), &Z_Registration_Info_UClass_AProjectile, CONSTRUCT_RELOAD_VERSION_INFO(FClassReloadVersionInfo, sizeof(AProjectile), 132314816U) },
 	};
-	static FRegisterCompiledInInfo Z_CompiledInDeferFile_FID_Tanks_Source_Tanks_Projectile_h_3989064616(TEXT("/Script/Tanks"),
+	static FRegisterCompiledInInfo Z_CompiledInDeferFile_FID_Tanks_Source_Tanks_Projectile_h_2157784839(TEXT("/Script/Tanks"),
 		Z_CompiledInDeferFile_FID_Tanks_Source_Tanks_Projectile_h_Statics::ClassInfo, UE_ARRAY_COUNT(Z_CompiledInDeferFile_FID_Tanks_Source_Tanks_Projectile_h_Statics::ClassInfo),
 		nullptr, 0,
 		nullptr, 0);

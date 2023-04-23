@@ -16,20 +16,20 @@ struct FHitResult;
 #endif
 #define TANKS_Projectile_generated_h
 
-#define FID_Tanks_Source_Tanks_Projectile_h_14_SPARSE_DATA
-#define FID_Tanks_Source_Tanks_Projectile_h_14_RPC_WRAPPERS \
+#define FID_Tanks_Source_Tanks_Projectile_h_16_SPARSE_DATA
+#define FID_Tanks_Source_Tanks_Projectile_h_16_RPC_WRAPPERS \
  \
 	DECLARE_FUNCTION(execMove); \
 	DECLARE_FUNCTION(execOnMeshOverlapBegin);
 
 
-#define FID_Tanks_Source_Tanks_Projectile_h_14_RPC_WRAPPERS_NO_PURE_DECLS \
+#define FID_Tanks_Source_Tanks_Projectile_h_16_RPC_WRAPPERS_NO_PURE_DECLS \
  \
 	DECLARE_FUNCTION(execMove); \
 	DECLARE_FUNCTION(execOnMeshOverlapBegin);
 
 
-#define FID_Tanks_Source_Tanks_Projectile_h_14_INCLASS_NO_PURE_DECLS \
+#define FID_Tanks_Source_Tanks_Projectile_h_16_INCLASS_NO_PURE_DECLS \
 private: \
 	static void StaticRegisterNativesAProjectile(); \
 	friend struct Z_Construct_UClass_AProjectile_Statics; \
@@ -38,7 +38,7 @@ public: \
 	DECLARE_SERIALIZER(AProjectile)
 
 
-#define FID_Tanks_Source_Tanks_Projectile_h_14_INCLASS \
+#define FID_Tanks_Source_Tanks_Projectile_h_16_INCLASS \
 private: \
 	static void StaticRegisterNativesAProjectile(); \
 	friend struct Z_Construct_UClass_AProjectile_Statics; \
@@ -47,7 +47,7 @@ public: \
 	DECLARE_SERIALIZER(AProjectile)
 
 
-#define FID_Tanks_Source_Tanks_Projectile_h_14_STANDARD_CONSTRUCTORS \
+#define FID_Tanks_Source_Tanks_Projectile_h_16_STANDARD_CONSTRUCTORS \
 	/** Standard constructor, called after all reflected properties have been initialized */ \
 	NO_API AProjectile(const FObjectInitializer& ObjectInitializer); \
 	DEFINE_DEFAULT_OBJECT_INITIALIZER_CONSTRUCTOR_CALL(AProjectile) \
@@ -60,7 +60,7 @@ private: \
 public:
 
 
-#define FID_Tanks_Source_Tanks_Projectile_h_14_ENHANCED_CONSTRUCTORS \
+#define FID_Tanks_Source_Tanks_Projectile_h_16_ENHANCED_CONSTRUCTORS \
 private: \
 	/** Private move- and copy-constructors, should never be used */ \
 	NO_API AProjectile(AProjectile&&); \
@@ -71,25 +71,25 @@ public: \
 	DEFINE_DEFAULT_CONSTRUCTOR_CALL(AProjectile)
 
 
-#define FID_Tanks_Source_Tanks_Projectile_h_11_PROLOG
-#define FID_Tanks_Source_Tanks_Projectile_h_14_GENERATED_BODY_LEGACY \
+#define FID_Tanks_Source_Tanks_Projectile_h_13_PROLOG
+#define FID_Tanks_Source_Tanks_Projectile_h_16_GENERATED_BODY_LEGACY \
 PRAGMA_DISABLE_DEPRECATION_WARNINGS \
 public: \
-	FID_Tanks_Source_Tanks_Projectile_h_14_SPARSE_DATA \
-	FID_Tanks_Source_Tanks_Projectile_h_14_RPC_WRAPPERS \
-	FID_Tanks_Source_Tanks_Projectile_h_14_INCLASS \
-	FID_Tanks_Source_Tanks_Projectile_h_14_STANDARD_CONSTRUCTORS \
+	FID_Tanks_Source_Tanks_Projectile_h_16_SPARSE_DATA \
+	FID_Tanks_Source_Tanks_Projectile_h_16_RPC_WRAPPERS \
+	FID_Tanks_Source_Tanks_Projectile_h_16_INCLASS \
+	FID_Tanks_Source_Tanks_Projectile_h_16_STANDARD_CONSTRUCTORS \
 public: \
 PRAGMA_ENABLE_DEPRECATION_WARNINGS
 
 
-#define FID_Tanks_Source_Tanks_Projectile_h_14_GENERATED_BODY \
+#define FID_Tanks_Source_Tanks_Projectile_h_16_GENERATED_BODY \
 PRAGMA_DISABLE_DEPRECATION_WARNINGS \
 public: \
-	FID_Tanks_Source_Tanks_Projectile_h_14_SPARSE_DATA \
-	FID_Tanks_Source_Tanks_Projectile_h_14_RPC_WRAPPERS_NO_PURE_DECLS \
-	FID_Tanks_Source_Tanks_Projectile_h_14_INCLASS_NO_PURE_DECLS \
-	FID_Tanks_Source_Tanks_Projectile_h_14_ENHANCED_CONSTRUCTORS \
+	FID_Tanks_Source_Tanks_Projectile_h_16_SPARSE_DATA \
+	FID_Tanks_Source_Tanks_Projectile_h_16_RPC_WRAPPERS_NO_PURE_DECLS \
+	FID_Tanks_Source_Tanks_Projectile_h_16_INCLASS_NO_PURE_DECLS \
+	FID_Tanks_Source_Tanks_Projectile_h_16_ENHANCED_CONSTRUCTORS \
 private: \
 PRAGMA_ENABLE_DEPRECATION_WARNINGS
 

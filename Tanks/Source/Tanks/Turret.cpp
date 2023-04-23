@@ -57,6 +57,19 @@ void ATurret::BeginPlay()
 	FTimerHandle _targetingTimerHandle;
 	GetWorld()->GetTimerManager().SetTimer(_targetingTimerHandle, this,	&ATurret::Targeting, TargetingRate, true, TargetingRate);
 }
+
+void ATurret::PostInitializeComponents()
+{
+	Super::PostInitializeComponents();
+	UStaticMesh* turretMeshTemp = LoadObject<UStaticMesh>(this, *TurretMeshPath);
+	if (turretMeshTemp)
+		TurretMesh->SetStaticMesh(turretMeshTemp);
+	UStaticMesh* bodyMeshTemp = LoadObject<UStaticMesh>(this, *BodyMeshPath);
+	if (bodyMeshTemp)
+		BodyMesh->SetStaticMesh(bodyMeshTemp);
+}
+
+
 void ATurret::Destroyed()
 {
 	if (Cannon)
